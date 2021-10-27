@@ -9,7 +9,8 @@ Refer to the "my account" section of the application or contact your account rep
 
 #### Assets created:
 
-
+* 
+*
 
 #### Inputs
 
