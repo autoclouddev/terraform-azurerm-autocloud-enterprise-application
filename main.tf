@@ -113,3 +113,32 @@ resource "azuread_application" "autocloud" {
     }
   }
 }
+
+
+data "azurerm_subscription" "current" {
+}
+
+data "azurerm_client_config" "current" {
+}
+
+resource "azurerm_role_definition" "autocloud" {
+  role_definition_id = "00000000-0000-0000-0000-000000000000"
+  name               = "my-custom-role-definition"
+  scope              = data.azurerm_subscription.current.id
+
+  permissions {
+    actions     = ["Microsoft.Resources/subscriptions/resourceGroups/read"]
+    not_actions = []
+  }
+
+  assignable_scopes = [
+    data.azurerm_subscription.primary.id,
+  ]
+}
+
+resource "azurerm_role_assignment" "example" {
+  name               = "00000000-0000-0000-0000-000000000000"
+  scope              = data.azurerm_subscription.primary.id
+  role_definition_id = azurerm_role_definition.example.role_definition_resource_id
+  principal_id       = data.azurerm_client_config.current.object_id
+}
