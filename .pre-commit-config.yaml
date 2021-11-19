@@ -1,0 +1,27 @@
+repos:
+- repo: https://github.com/gruntwork-io/pre-commit
+  rev: v0.1.12
+  hooks:
+    - id: terraform-fmt
+      args: ["-recursive"]
+    - id: tflint
+# - repo: https://github.com/antonbabenko/pre-commit-terraform
+#   rev: v1.48.0
+#   hooks:
+#     - id: terraform_docs
+#     - id: terraform_tfsec
+#     - id: checkov
+- repo: local
+  hooks:
+    - id: remove-module-tf-lock
+      name: Remove Terraform Lock Files from Modules
+      always_run: true
+      entry: find . -name ".terraform.lock.hcl" -not -path "*/live/*" -exec sh -c 'rm $0' {} \;
+      language: system
+      pass_filenames: false
+    - id: generate-terraform-docs
+      name: Generate Terraform README files
+      always_run: true
+      entry: find . -name ".terraform-docs.yml" -not -path "*/template/*" -exec sh -c 'dirname $0 | xargs -n 1 -I % sh -c "{ terraform-docs % > %/README.md; }"' {} \;
+      language: system
+      pass_filenames: false
