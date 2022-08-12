@@ -11,15 +11,15 @@ Creates an Azure app regitration with the autocloud read_all permissions to gran
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azuread"></a> [azuread](#requirement_azuread) | 2.7.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement_azurerm) | 2.82.0 |
+| <a name="requirement_azuread"></a> [azuread](#requirement_azuread) | 2.27.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement_azurerm) | 3.18.0 |
 
 #### Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azuread"></a> [azuread](#provider_azuread) | 2.7.0 |
-| <a name="provider_azurerm"></a> [azurerm](#provider_azurerm) | 2.82.0 |
+| <a name="provider_azuread"></a> [azuread](#provider_azuread) | 2.27.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider_azurerm) | 3.18.0 |
 | <a name="provider_random"></a> [random](#provider_random) | n/a |
 
 #### Modules
@@ -30,15 +30,15 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [azuread_application.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.7.0/docs/resources/application) | resource |
-| [azuread_application_password.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.7.0/docs/resources/application_password) | resource |
-| [azuread_service_principal.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.7.0/docs/resources/service_principal) | resource |
-| [azurerm_role_assignment.autocloud_reader](https://registry.terraform.io/providers/hashicorp/azurerm/2.82.0/docs/resources/role_assignment) | resource |
-| [azurerm_role_assignment.autocloud_security_reader](https://registry.terraform.io/providers/hashicorp/azurerm/2.82.0/docs/resources/role_assignment) | resource |
+| [azuread_application.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/application) | resource |
+| [azuread_application_password.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/application_password) | resource |
+| [azuread_service_principal.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/service_principal) | resource |
+| [azurerm_role_assignment.autocloud_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
+| [azurerm_role_assignment.autocloud_security_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [random_uuid.admin](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
-| [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/2.7.0/docs/data-sources/client_config) | data source |
-| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/2.82.0/docs/data-sources/client_config) | data source |
-| [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/2.82.0/docs/data-sources/subscription) | data source |
+| [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/data-sources/client_config) | data source |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/data-sources/client_config) | data source |
+| [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/data-sources/subscription) | data source |
 
 #### Inputs
 
