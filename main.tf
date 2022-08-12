@@ -83,7 +83,14 @@ resource "azurerm_role_assignment" "autocloud_security_reader" {
   principal_id         = azuread_service_principal.autocloud[0].object_id
 }
 
-# Grant admin consent to for the default directory
+resource "azurerm_role_assignment" "autocloud_management_group_reader" {
+  count                = var.enabled ? 1 : 0
+  scope                = data.azurerm_subscription.current.id
+  role_definition_name = "Management Group Reader"
+  principal_id         = azuread_service_principal.autocloud[0].object_id
+}
+
+# Grant admin consent to the default directory
 resource "null_resource" "grant-admin" {
   count = var.enabled && var.grant_admin_consent ? 1 : 0
   provisioner "local-exec" {
@@ -91,7 +98,8 @@ resource "null_resource" "grant-admin" {
   }
   depends_on = [
     azurerm_role_assignment.autocloud_reader[0],
-    azurerm_role_assignment.autocloud_security_reader[0]
+    azurerm_role_assignment.autocloud_security_reader[0],
+    azurerm_role_assignment.autocloud_management_group_reader[0]
   ]
 
   triggers = {
