@@ -20,8 +20,8 @@ Creates an Azure app regitration with the autocloud read_all permissions to gran
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider_azuread) | 2.27.0 |
 | <a name="provider_azurerm"></a> [azurerm](#provider_azurerm) | 3.18.0 |
-| <a name="provider_null"></a> [null](#provider_null) | n/a |
-| <a name="provider_random"></a> [random](#provider_random) | n/a |
+| <a name="provider_null"></a> [null](#provider_null) | 3.1.1 |
+| <a name="provider_random"></a> [random](#provider_random) | 3.3.2 |
 
 #### Modules
 
@@ -45,6 +45,8 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_enabled"></a> [enabled](#input_enabled) | Set to false to prevent the module from creating any resources | `bool` | `false` | no |
+| <a name="input_grant_admin_consent"></a> [grant_admin_consent](#input_grant_admin_consent) | Set to false to prevent the module from granting admin consent | `bool` | `true` | no |
 | <a name="input_tenant_id"></a> [tenant_id](#input_tenant_id) | Tenant Id | `string` | `""` | no |
 
 #### Outputs

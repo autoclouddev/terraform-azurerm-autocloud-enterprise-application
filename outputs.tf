@@ -1,11 +1,11 @@
 output "application_id" {
   description = "Application/Client ID for new service principal"
-  value       = azuread_application.autocloud.application_id
+  value       = join("", azuread_application.autocloud[*].application_id)
 }
 
 output "client_secret" {
   description = "Client secret for new service principal"
-  value       = nonsensitive(azuread_application_password.autocloud.value)
+  value       = join("", azuread_application_password.autocloud[*].value)
   sensitive   = true
 }
 
