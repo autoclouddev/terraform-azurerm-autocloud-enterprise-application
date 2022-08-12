@@ -50,7 +50,7 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_Application_ID"></a> [Application_ID](#output_Application_ID) | n/a |
-| <a name="output_Client_Secret"></a> [Client_Secret](#output_Client_Secret) | n/a |
-| <a name="output_Subritption_ID"></a> [Subritption_ID](#output_Subritption_ID) | n/a |
-| <a name="output_Tenant_ID"></a> [Tenant_ID](#output_Tenant_ID) | n/a |
+| <a name="output_application_id"></a> [application_id](#output_application_id) | Application/Client ID for new service principal |
+| <a name="output_client_secret"></a> [client_secret](#output_client_secret) | Client secret for new service principal |
+| <a name="output_subritption_id"></a> [subritption_id](#output_subritption_id) | Subscription ID permissions attached to |
+| <a name="output_tenant_id"></a> [tenant_id](#output_tenant_id) | Tenant ID for tenant service principal attached to |

@@ -1,15 +1,20 @@
-output "Subritption_ID" {
-  value = azurerm_subscription.current.id
+output "application_id" {
+  description = "Application/Client ID for new service principal"
+  value       = azuread_application.autocloud.application_id
 }
 
-output "Tenant_ID" {
-  value = azurerm_subscription.current.tenant_id
+output "client_secret" {
+  description = "Client secret for new service principal"
+  value       = nonsensitive(azuread_application_password.autocloud.value)
+  sensitive   = true
 }
 
-output "Application_ID" {
-  value = azuread_application.autocloud.application_id
+output "subritption_id" {
+  description = "Subscription ID permissions attached to"
+  value       = basename(data.azurerm_subscription.current.id)
 }
 
-output "Client_Secret" {
-  value = nonsensitive(azuread_application_password.autocloud.value)
+output "tenant_id" {
+  description = "Tenant ID for tenant service principal attached to"
+  value       = data.azurerm_subscription.current.tenant_id
 }
