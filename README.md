@@ -37,7 +37,6 @@ No modules.
 | [azurerm_role_assignment.autocloud_security_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [random_uuid.admin](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
 | [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/data-sources/client_config) | data source |
-| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/data-sources/client_config) | data source |
 | [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/data-sources/subscription) | data source |
 
 #### Inputs
