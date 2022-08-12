@@ -20,6 +20,7 @@ Creates an Azure app regitration with the autocloud read_all permissions to gran
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider_azuread) | 2.27.0 |
 | <a name="provider_azurerm"></a> [azurerm](#provider_azurerm) | 3.18.0 |
+| <a name="provider_null"></a> [null](#provider_null) | n/a |
 | <a name="provider_random"></a> [random](#provider_random) | n/a |
 
 #### Modules
@@ -35,6 +36,7 @@ No modules.
 | [azuread_service_principal.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/service_principal) | resource |
 | [azurerm_role_assignment.autocloud_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.autocloud_security_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
+| [null_resource.grant-admin](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
 | [random_uuid.admin](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/uuid) | resource |
 | [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/data-sources/client_config) | data source |
 | [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/data-sources/subscription) | data source |
