@@ -2,6 +2,16 @@ resource "random_uuid" "admin" {
   count = var.enabled ? 1 : 0
 }
 
+resource "azuread_service_principal" "azurestorage" {
+  application_id = data.azuread_application_published_app_ids.well_known.result.AzureStorage
+  use_existing   = true
+}
+
+resource "azuread_service_principal" "msgraph" {
+  application_id = data.azuread_application_published_app_ids.well_known.result.MicrosoftGraph
+  use_existing   = true
+}
+
 # Create an App Registration with the required resources access
 resource "azuread_application" "autocloud" {
   count            = var.enabled ? 1 : 0
@@ -16,31 +26,31 @@ resource "azuread_application" "autocloud" {
   }
 
   required_resource_access {
-    resource_app_id = "e406a681-f3d4-42a8-90b6-c2b029497af1" # Azure Storage
+    resource_app_id = data.azuread_application_published_app_ids.well_known.result.AzureStorage # Azure Storage
 
     resource_access {
-      id   = "03e0da56-190b-40ad-a80c-ea378c433f7f" # user_impersonation
+      id   = azuread_service_principal.azurestorage.app_role_ids["user_impersonation"] # user_impersonation
       type = "Scope"
     }
   }
 
   required_resource_access {
-    resource_app_id = "00000003-0000-0000-c000-000000000000" # Microsoft Graph
+    resource_app_id = data.azuread_application_published_app_ids.well_known.result.MicrosoftGraph # Microsoft Graph
 
     resource_access {
-      id   = "e4c9e354-4dc5-45b8-9e7c-e1393b0b1a20" # AuditLog.Read.All
+      id   = azuread_service_principal.msgraph.app_role_ids["AuditLog.Read.All"] # AuditLog.Read.All
       type = "Scope"
     }
     resource_access {
-      id   = "06da0dbc-49e2-44d2-8312-53f166ab848a" # Directory.Read.All
+      id   = azuread_service_principal.msgraph.app_role_ids["Directory.Read.All"] # Directory.Read.All
       type = "Scope"
     }
     resource_access {
-      id   = "572fea84-0151-49b2-9301-11cb16974376" # Policy.Read.All
+      id   = azuread_service_principal.msgraph.app_role_ids["Policy.Read.All"] # Policy.Read.All
       type = "Scope"
     }
     resource_access {
-      id   = "e1fe6dd8-ba31-4d61-89e7-88639da4683d" # User.Read
+      id   = azuread_service_principal.msgraph.app_role_ids["User.Read"] # User.Read
       type = "Scope"
     }
 
@@ -53,6 +63,11 @@ resource "azuread_application" "autocloud" {
     id                   = random_uuid.admin[0].result
     value                = "Admin"
   }
+
+  depends_on = [
+    azuread_service_principal.azurestorage,
+    azuread_service_principal.msgraph
+  ]
 }
 
 # Create a Service Principal from the app registration
