@@ -55,6 +55,7 @@ No modules.
 | [azuread_application.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/application) | resource |
 | [azuread_application_password.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/application_password) | resource |
 | [azuread_service_principal.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/service_principal) | resource |
+| [azurerm_role_assignment.autocloud_billing_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.autocloud_management_group_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.autocloud_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.autocloud_security_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
