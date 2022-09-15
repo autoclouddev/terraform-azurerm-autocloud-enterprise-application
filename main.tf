@@ -103,6 +103,13 @@ resource "azurerm_role_assignment" "autocloud_management_group_reader" {
   principal_id         = azuread_service_principal.autocloud[0].object_id
 }
 
+resource "azurerm_role_assignment" "autocloud_billing_reader" {
+  count                = var.enabled ? 1 : 0
+  scope                = data.azurerm_subscription.current.id
+  role_definition_name = "Billing Reader"
+  principal_id         = azuread_service_principal.autocloud[0].object_id
+}
+
 # Grant admin consent to the default directory
 resource "null_resource" "grant-admin" {
   count = var.enabled && var.grant_admin_consent ? 1 : 0
