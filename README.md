@@ -55,12 +55,16 @@ No modules.
 | [azuread_application.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/application) | resource |
 | [azuread_application_password.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/application_password) | resource |
 | [azuread_service_principal.autocloud](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/resources/service_principal) | resource |
+| [azurerm_role_assignment.autocloud_billing_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.autocloud_management_group_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.autocloud_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.autocloud_security_reader](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/resources/role_assignment) | resource |
 | [null_resource.grant-admin](https://registry.terraform.io/providers/hashicorp/null/3.1.1/docs/resources/resource) | resource |
 | [random_uuid.admin](https://registry.terraform.io/providers/hashicorp/random/3.3.2/docs/resources/uuid) | resource |
+| [azuread_application_published_app_ids.well_known](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/data-sources/application_published_app_ids) | data source |
 | [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/data-sources/client_config) | data source |
+| [azuread_service_principal.azurestorage](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/data-sources/service_principal) | data source |
+| [azuread_service_principal.msgraph](https://registry.terraform.io/providers/hashicorp/azuread/2.27.0/docs/data-sources/service_principal) | data source |
 | [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/3.18.0/docs/data-sources/subscription) | data source |
 
 #### Inputs
